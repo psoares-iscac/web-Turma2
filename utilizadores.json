@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "nome": "Ana Silva",
+      "email": "ana.silva@example.com",
+      "foto": "avatar-1.svg"
+    },
+    {
+      "id": 2,
+      "nome": "Bruno Oliveira",
+      "email": "bruno.oliveira@example.com",
+      "foto": "bruno_oliveira.png"
+    },
+    {
+      "id": 3,
+      "nome": "Carla Pereira",
+      "email": "carla.pereira@example.com",
+      "foto": "avatar-2.svg"
+    },
+    {
+      "id": 4,
+      "nome": "Daniel Costa",
+      "email": "daniel.costa@example.com",
+      "foto": "daniel_costa.png"
+    },
+    {
+      "id": 5,
+      "nome": "Eduarda Martins",
+      "email": "eduarda.martins@example.com",
+      "foto": "avatar-3.svg"
+    },
+    {
+      "id": 6,
+      "nome": "Fábio Rodrigues",
+      "email": "fabio.rodrigues@example.com",
+      "foto": "fabio_rodrigues.jpeg"
+    },
+    {
+      "id": 7,
+      "nome": "Gabriela Almeida",
+      "email": "gabriela.almeida@example.com",
+      "foto": "gabriela_almeida.jpg"
+    },
+    {
+      "id": 8,
+      "nome": "Henrique Sousa",
+      "email": "henrique.sousa@example.com",
+      "foto": "henrique_sousa.png"
+    },
+    {
+      "id": 9,
+      "nome": "Isabel Fernandes",
+      "email": "isabel.fernandes@example.com",
+      "foto": "isabel_fernandes.jpeg"
+    },
+    {
+      "id": 10,
+      "nome": "Jorge Lima",
+      "email": "jorge.lima@example.com",
+      "foto": "jorge_lima.jpg"
+    }
+  ]
+  

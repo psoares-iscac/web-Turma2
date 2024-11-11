@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+</head>
+<body style="height:2000px;">
+    <!-- MENU PRINCIPAL -->
+    <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">WEB 20224</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav-menu">
+                <div class="navbar-nav ms-auto nav-underline">
+                    <a href="#" class="nav-link">Opção 1</a>
+                    <a href="#" class="nav-link active">Opção 2</a>
+                </div>
+            </div>
+
+            <button type="button" class="btn">
+                <i class="bi bi-person-vcard" style="font-size: 1.5rem;"></i>
+            </button>    
+
+        </div>
+    </nav>
+
+
+    <!-- CAROUSEL -->
+    <div class="container-fluid mb-5">
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-6 offset-md-1 offset-lg-3">
+                <div class="carousel slide" 
+                    id="galeria-principal" data-bs-ride="carousel">
+                    
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="">
+                            <img src="imgs/imagem2.jpg" alt="imagem do carousel" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="">
+                            <img src="imgs/imagem3.jpg" alt="imagem do carousel" class="d-block w-100">
+                        </div>
+                    </div>
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-slide-to="0" data-bs-target="#galeria-principal" class="active"></button>
+                        <button type="button" data-bs-slide-to="1" data-bs-target="#galeria-principal" ></button>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" 
+                        data-bs-target="#galeria-principal" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#galeria-principal" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FORMULÁRIO DE CONTACTOS -->
+    <div class="container" style="">
+        <div class="row">
+            <div class="col col-sm-10 col-lg-8 offset-sm-1 offset-lg-2  ">
+                <form action="lixo.html" method="GET">
+            <div class="mb-2">
+                <label class="form-label" for="#f-email">Email</label>
+                <input id="f-email" name="fEmail" type="email" 
+                    class="form-control" placeholder="insira o seu email"
+                    required>
+            </div>
+            <div class="mb-2">
+                <label class="form-label" for="#f-nome">Nome</label>
+                <input id="f-nome" name="fNome" type="password" 
+                    class="form-control" placeholder="insira o seu nome">
+            </div>
+            <div class="mb-2">
+                <textarea class="form-control" name="fMsg" id="f-msg" rows="3"
+                placeholder="introduza a sua mensagem"></textarea>
+            </div>
+            <div class="mb-2">
+                <input id="f-news" name="fNews" class="form-check-input" type="checkbox">
+                <label class="form-check-label" for="f-news">Inscrever na newsletter</label>
+            </div>
+            <button class="btn btn-outline-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <!-- LISTA DE UTILIZADORES -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table id="lista-utilizadores" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Nome</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-list">
+                        
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!--MODAL PARA VER UTILIZADOR -->
+    <div id="modal-user" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+                <div class="row">
+                    <div class="col">
+                        <div id="modal-nome">pAULO</div>
+                        <div id="modal-email">email</div>
+                    </div>
+                    <div class="col">
+                        <img id="modal-foto" class="w-100" src="imgs/avatares/avatar1.png" alt="">
+                    </div>
+                </div> 
+            
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <button class="btn btn-success d-none">
+        <i class="bi bi-windows" style="font-size:100px;color:yellow;"></i>
+    </button>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+
+    const modalUser = new bootstrap.Modal(document.getElementById('modal-user'));
+
+        /*  clickar na tabela */
+        /*const usersX = document.querySelectorAll('#lista-utilizadores tbody tr');*/
+
+        /*usersX.forEach(user => {
+            user.addEventListener('click', ()=>{
+                let nome = user.dataset.nome;
+                alert('obrigado '+ nome)
+            })
+        })*/
+
+
+        /* CARREGAR DADOS DE UTILIZADORES */
+        function loadUsers(){
+            let tbody = document.getElementById('users-list');
+
+            fetch('users.json')
+                .then(response => {
+                    if(!response.ok){
+                        throw new Error('Problema com o ficheiro');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    data.forEach(function(user){
+                        let row = document.createElement('tr');
+                        row.addEventListener('click', () => {
+                            document.getElementById('modal-nome').textContent = user.nome;    
+                            document.getElementById('modal-email').textContent = user.email;  
+                            document.getElementById('modal-foto').src = 'imgs/avatares/' + user.foto;      
+
+                            modalUser.show();
+                        })
+                        
+                        let html = `
+                            <td>${user.email}</td>
+                            <td>${user.nome}</td>
+                            <td>
+                                <img class="rounded-circle" style="width:30px;" src="imgs/avatares/${user.foto}" alt="">
+                            </td>
+                        `;
+                        row.innerHTML = html;
+                        tbody.appendChild(row);
+                    })
+                })
+                .catch(error =>{
+                    console.log('Erro', error);
+                })
+            
+            
+                
+
+        }
+
+        //modalUser.show();
+        loadUsers();
+
+    </script>
+</body>
+</html>
