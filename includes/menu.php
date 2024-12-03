@@ -9,8 +9,8 @@
 
             <div class="collapse navbar-collapse" id="nav-menu">
                 <div class="navbar-nav ms-auto nav-underline">
-                    <a href="noticias.php" class="nav-link">Notícias</a>
-                    <a href="#" class="nav-link active">Opção 2</a>
+                    <a href="#" class="nav-link">Opção 1</a>
+                    <a href="#" class="nav-link">Opção 2</a>
                 </div>
             </div>
 
