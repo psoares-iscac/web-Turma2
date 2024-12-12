@@ -124,25 +124,7 @@ if(!$stmt || $stmt->rowCount() == 0){
     ?>
 </div>
 
-<div style="width:400px;" class="mt-5 mx-auto">
-    <form action="">
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="com-email" placeholder="name@example.com">
-            <label for="floatingInput">Endereço de Email</label>
-        </div>
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Deixe a sua mensagem" id="com-mensagem"></textarea>
-            <label for="floatingTextarea">Deixe a sua mensagem</label>
-        </div>
-        <div class="form-check mt-2 mb-2">
-            <input class="form-check-input" type="checkbox" value="" id="com-check" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                Permito tratamento dos meus dados
-            </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar comentário</button>
-    </form>
-</div>
+
 
 
 <div style="height:300px;"></div>
