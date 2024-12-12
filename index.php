@@ -41,7 +41,8 @@
         </div>
     </div>
 
-    <div class="w-100" style="height:300px;">&nbsp;</div>
+    <div class="w-100" style="height:500px;">&nbsp;</div>
+
 
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>

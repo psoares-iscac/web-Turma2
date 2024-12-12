@@ -13,7 +13,11 @@ if(empty($_GET['id'])){
     <title>Desenvolvimento para a Web</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-icons.min.css">
-    
+    <style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
 </head>
 <body>
 <?php require('includes/connection.php') ?>
@@ -91,7 +95,7 @@ if($stmt && $stmt->rowCount() == 1){
 </div>
 <!-- comentários -->
 <?php
-$sql = 'SELECT * FROM comentarios WHERE eventoId = :i';
+$sql = 'SELECT * FROM comentarios WHERE eventoId = :i ORDER BY id DESC';
 $stmt = $dbh->prepare($sql);
 $stmt->bindValue(':i', $id);
 $stmt->execute();
@@ -99,7 +103,9 @@ if(!$stmt || $stmt->rowCount() == 0){
     $resultados = false;
 }else $resultados = true;
 ?>
-<div class="container">
+
+<!-- lista de comentarios -->
+<div id="comentarios" class="container">
     <div class="row">
         <div class="col-6 fs-3 border-bottom border-dark">Comentários</div>
     </div>
@@ -112,7 +118,7 @@ if(!$stmt || $stmt->rowCount() == 0){
                     <i class="bi bi-person-bounding-box" style="font-size:48px;"></i>
                 </div>
                 <div class="col p-3">
-                    <div class="fw-light">Anónimo, <?= $c->date ?></div>
+                    <div class="fw-light"><?= $c->email ?>, <?= $c->date ?></div>
                     <div><?= $c->mensagem ?></div>
                 </div>
             </div>
@@ -124,10 +130,12 @@ if(!$stmt || $stmt->rowCount() == 0){
     ?>
 </div>
 
+<!-- inserir comentarios -->
 <div style="width:400px;" class="mt-5 mx-auto">
     <form action="formData/comentarioInserir.php" method="GET">
+        <input type="hidden" name="eventoId" value="<?= $id ?>">
         <div class="form-floating mb-3">
-            <input name="email" type="email" class="form-control" id="com-email" placeholder="name@example.com">
+                <input name="email" type="email" class="form-control" id="com-email" placeholder="name@example.com">
             <label for="floatingInput">Endereço de Email</label>
         </div>
         <div class="form-floating">
@@ -135,7 +143,7 @@ if(!$stmt || $stmt->rowCount() == 0){
             <label for="floatingTextarea">Deixe a sua mensagem</label>
         </div>
         <div class="form-check mt-2 mb-2">
-            <input name="aceito" class="form-check-input" type="checkbox" value="" id="com-check" checked>
+            <input name="aceito" class="form-check-input" type="checkbox" value="sim" id="com-check" checked>
             <label class="form-check-label" for="flexCheckChecked">
                 Permito tratamento dos meus dados
             </label>
