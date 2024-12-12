@@ -32,7 +32,7 @@
                             <div class="fw-bold"><?= $evento->nome ?></div>
                             <div class="fw-light"><?= $evento->data ?></div>
                             <div class="mb-2"><?= $evento->descricao ?></div>
-                            <a class="mt-auto btn btn-outline-secondary w-100 stretched-link">Detalhes</a>
+                            <a href="evento.php?id=<?= $evento->id ?>" class="mt-auto btn btn-outline-secondary w-100 stretched-link">Detalhes</a>
                         </div>          
                     <?php
                     }
